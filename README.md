@@ -259,6 +259,8 @@ Response:
 }
 TYPE: GET
 
+<img src="scamdetection.png" alt="drawing" height="800"/>
+
 
 
 
