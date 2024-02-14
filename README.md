@@ -2,16 +2,22 @@
 
 API Documentation:
 
+
 List of tables:
 API: http://localhost:8081/table/all
+
 Response:
+
 ["call_record","email_record","record","scam_category","scammer","scams","user"]
+
 Type:
 GET
+
 Get call record Details: 
 API: http://localhost:8081/callrecord/all 
+```
 Response:
- {
+    {
         "id": {
             "recordId": 1,
             "phoneNumber": "+123456789"
@@ -39,14 +45,18 @@ Response:
             "reported": "Possible Money Scam"
         }
     }
+```
 
 TYPE: GET		
 
 Email Record 
+
 Api : http://localhost:8081/emailrecord/all
+
 Type : GET
+```
 Response: 
- {
+    {
         "id": {
             "recordId": 1,
             "email": "user1@example.com"
@@ -72,13 +82,16 @@ Response:
                 }
             },
             "reported": "Possible Money Scam"
-        }
-
+    }
+```
 Record
+
 API : http://localhost:8081/record/all
+
 TYPE: GET
+```
 Response:
-{
+    {
         "recordId": 1,
         "user": {
             "userId": 101,
@@ -99,22 +112,29 @@ Response:
         },
         "reported": "Possible Money Scam"
     }
-
+```
 Scam_category
+
 API:http://localhost:8081/scamcategory/all
+
 Type: get
+```
 Response: 
 
- {
+    {
         "categoryId": 1,
         "type": "Type 1",
         "description": "Money Scam"
     }
+```
 Scammer 
+
 API: http://localhost:8081/scammer/all
+
 Type: GET
+```
 Response:
-{
+    {
         "scammerId": 1,
         "phoneNumber": "+111222333",
         "email": "scammer1@example.com",
@@ -124,13 +144,15 @@ Response:
             "description": "Money Scam"
         }
     }
- 
+```
 
 
-SCAms:
+Scams:
+
 API: http://localhost:8081/scam/all
+```
 Response:
-{
+    {
         "scamId": 1,
         "scammer": {
             "scammerId": 1,
@@ -141,18 +163,23 @@ Response:
                 "type": "Type 1",
                 "description": "Money Scam"
             }
-        }
-Type: GET
-User
-	API:http://localhost:8081/user/all
-	Respose:
-	 {
-        "userId": 101,
-        "phoneNumber": "+111111111",
-        "email": "user101@example.com",
-        "name": "John Doe",
-        "age": 25
     }
+```
+Type: GET
+
+User
+
+API:http://localhost:8081/user/all
+```
+Respose:
+    {
+    "userId": 101,
+    "phoneNumber": "+111111111",
+    "email": "user101@example.com",
+    "name": "John Doe",
+    "age": 25
+    }
+```
 Type: Get
 
 
@@ -160,6 +187,7 @@ Type: Get
 
 
 API: http://localhost:8081/scam/save
+```
 Request : 
 {
   "record": {
@@ -181,8 +209,9 @@ Request :
   "duration": "2023-01-01T12:34:56",
   "lostResource":"money"
 }
+```
 
-
+```
 Response:
 {
     "recordId": 21,
@@ -205,7 +234,7 @@ Response:
     },
     "reported": "User"
 }
-
+```
 
 Type: POST
 
@@ -221,7 +250,9 @@ We have two API’s:
 20,40,60 adn 60+
 
 API : http://localhost:8081/scam/age 
+
 GET
+```
 Response:
 [
     {
@@ -241,17 +272,21 @@ Response:
         "scamCount": 1
     }
 ]
-
+```
 
 2) given min age and max age it gives the count of email scam and phone scam 
+
 API: http://localhost:8081/scam/scamStats
+
+```
 Request body  
 {
     "minAge":20,
     "maxAge":40
 }
+```
 
-
+```
 Response:
 {
     "phone": 21,
@@ -259,8 +294,7 @@ Response:
 }
 TYPE: GET
 
+```
+### Diagram
+
 <img src="scamdetection.png" alt="drawing" height="800"/>
-
-
-
-
